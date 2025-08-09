@@ -5,7 +5,7 @@ import Contact from "@/components/Contact";
 import Footer from "../components/Footer";
 import Header from "@/components/Header";
 
-export const Home = () => {
+const page = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -20,3 +20,4 @@ export const Home = () => {
   );
 };
 
+export default page

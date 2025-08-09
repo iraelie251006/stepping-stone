@@ -1,12 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { Section } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, Eye, Award } from "lucide-react";
-import packagingProducts from "@/assets/packaging-products.jpg";
 
 const About = () => {
   return (
-    <Section id="about">
+    <section id="about">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
           <div className="space-y-4">
@@ -68,13 +66,13 @@ const About = () => {
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-dark-yellow/20 to-dark-green/20 rounded-2xl transform -rotate-3"></div>
           <img 
-            src={packagingProducts}
+            src='/SteppingStone logo.png'
             alt="Various packaging products"
             className="relative rounded-2xl shadow-2xl w-full h-[600px] object-cover"
           />
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
 
