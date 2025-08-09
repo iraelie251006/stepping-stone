@@ -1,8 +1,22 @@
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Footer from "../components/Footer";
+import Header from "@/components/Header";
 
-export default function Home() {
+export const Home = () => {
   return (
-    <section>
-      <h1>Welcome to Stepping stone</h1>
-    </section>
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
-}
+};
+
