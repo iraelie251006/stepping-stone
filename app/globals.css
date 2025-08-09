@@ -1,26 +1,126 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 120 60% 15%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 120 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 60% 15%;
+
+    --primary: 120 100% 20%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 48 87% 38%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 120 20% 95%;
+    --muted-foreground: 120 10% 45%;
+
+    --accent: 48 87% 38%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 20% 90%;
+    --input: 120 20% 90%;
+    --ring: 120 100% 20%;
+
+    --radius: 0.75rem;
+    
+    /* Custom design tokens */
+    --dark-yellow: 48 87% 38%;
+    --dark-green: 120 100% 20%;
+    --light-green: 120 60% 96%;
+    --gradient-primary: linear-gradient(135deg, hsl(var(--dark-green)), hsl(var(--dark-yellow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--dark-yellow)), hsl(var(--dark-green)));
+    --shadow-brand: 0 10px 30px -10px hsl(var(--dark-green) / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 120 60% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 120 50% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 120 50% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 48 87% 45%;
+    --primary-foreground: 120 60% 8%;
+
+    --secondary: 120 100% 25%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 120 30% 15%;
+    --muted-foreground: 120 10% 65%;
+
+    --accent: 48 87% 45%;
+    --accent-foreground: 120 60% 8%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 30% 18%;
+    --input: 120 30% 18%;
+    --ring: 48 87% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-ubuntu;
+  }
+  
+  .brand-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .brand-shadow {
+    box-shadow: var(--shadow-brand);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
 }
